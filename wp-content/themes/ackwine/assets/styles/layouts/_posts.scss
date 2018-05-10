@@ -1,0 +1,35 @@
+body.archive {
+	.body {
+		.page-section {
+			.post {
+				&+.post {
+					margin-top: $spacer-1;
+					padding-top: $spacer-1;
+					border-top: 1px solid $gray-200;
+				}
+				header {
+					margin-bottom: $spacer-1;
+					h2 {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}
+.navigation {
+	margin-top: $spacer-1;
+	.nav-links {
+		@extend .clearfix;
+		a {
+			@extend .btn;
+			@extend .btn-secondary;
+		}
+		.nav-previous {
+			float: left;
+		}
+		.nav-next {
+			float: right;
+		}
+	}
+}

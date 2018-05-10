@@ -1,0 +1,47 @@
+html {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+html, body {
+    overflow-x: hidden;
+    &.overlay-lock {
+        overflow: hidden;
+    }
+}
+::-moz-selection {
+    color: $white;
+    background-color: theme-color('primary');
+}
+::selection {
+    color: $white;
+    background-color: theme-color('primary');
+}
+img {
+    @extend .img-fluid;
+}
+h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, table, form {
+    margin-bottom: $spacer-1;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+table {
+    width: 100%;
+}
+a {
+    @include transition();
+}
+body {
+    .font-raleway {
+        font-family: $font-family-sans-serif !important;
+    }
+    .font-trend {
+        font-family: $font-family-serif !important;
+    }
+    blockquote {
+        font-family: $font-family-quote !important;
+    }
+    iframe {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,150 @@
+.banner {
+	z-index: 9;
+	position: relative;
+	background-color: $white;
+	border-bottom: 1px solid $gray-200;
+	@include media-breakpoint-down(md) {
+		background-color: theme-color('primary');
+	}
+	.navbar-brand {
+		height: 0;
+		line-height: 0;
+		padding: 0;
+	}
+	.secondary-nav {
+		padding-top: $spacer;
+		padding-bottom: $spacer;
+	}
+	.primary-nav {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		justify-content: center;
+		background-color: theme-color('primary');
+	}
+	.navbar {
+		padding: 0;
+		justify-content: center;
+		.navbar-brand {
+			margin-right: auto;
+			color: $white;
+			font-family: $font-family-serif;
+			display: none;
+
+			@include media-breakpoint-down(md) {
+				display: block;
+			}
+		}
+		.navbar-nav {
+			.menu-item {
+				margin:0 0 0 1.75rem;
+				line-height: normal;
+				display: flex;
+				align-items: center!important;
+				@include media-breakpoint-down(lg) {
+					margin:0 0 0 1.25rem;
+				}
+				@include media-breakpoint-down(sm) {
+					margin:0 0 0 .75rem;
+				}
+				@include media-breakpoint-down(xs) {
+					margin:0 0 0 .5rem;
+				}
+				&:after{
+					content: '\00B7';
+					display: inline-block;
+					background-color: $white;
+					height: 5px;
+					width: 5px;
+					border-radius: 5px;
+				}
+				&:last-child {
+					&:after{
+						display: none;
+					}
+				}
+				.nav-link {
+					color: $white;
+					font-family: $font-family-serif;
+					font-size: 1.25rem;
+					line-height: 40px;
+					height: 40px;
+					display: inline-block;
+					padding: 0 1.75rem 0 0;
+					@include media-breakpoint-down(lg) {
+						padding:0  1.25rem 0 0;
+					}
+					@include media-breakpoint-down(sm) {
+						padding:0 .75rem 0 0 ;
+					}
+					@include media-breakpoint-down(xs) {
+						padding:0  .5rem 0 0;
+					}
+
+				}
+			}
+		}
+	}
+	.navbar-toggler {
+		height: $menu-height;
+		line-height: $menu-height;
+		padding: 0 .625rem;
+		position: absolute;
+		color: $white;
+		border-bottom: 0;
+		background-color: transparent;
+		top: 0;
+		right: 0;
+		@include media-breakpoint-down(md) {
+			display: block;
+		}
+		&.navbar-toggler-right {
+			right: 0;
+		}
+		.touch-button {
+			display: none;
+		}
+	}
+	.flexnav {
+		.menu-item {
+			a {
+				color: $white;
+				font-family: $font-family-serif;
+			}
+		}
+	}
+	&.banner-sticky {
+		opacity: 0;
+		top: -100px;
+		left: 0;
+		width: 100%;
+		position: fixed;
+		transition: all ease-in-out .6s;
+		box-shadow: 0 0 10px rgba(0,0,0,.1);
+
+		&.sticked {
+			opacity: 1;
+			top: 0;
+			margin: 0;
+			.navbar-brand {
+				display: block;
+			}
+
+			.navbar-nav {
+				.nav-item {
+					margin:0 0 0 10px;
+					@include media-breakpoint-down(md) {
+					}
+					@include media-breakpoint-down(sm) {
+					}
+					@include media-breakpoint-down(xs) {
+					}
+
+					.nav-link {
+						padding:0 10px 0 0;
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+// Text Grid
+.text-columns {
+  column-count: 2;
+  column-gap: $grid-gutter-width;
+  @include media-breakpoint-down(xs) {
+    column-count: 1;
+    column-gap: 0;
+  }
+  p {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
+// Small Grid
+.row-sm {
+  @include make-row();
+  margin-right: ($grid-gutter-width-sm / -2);
+  margin-left:  ($grid-gutter-width-sm / -2);
+  > * {
+    @include make-col-ready();
+    padding: ($grid-gutter-width-sm / 2);
+  }
+}
+.row-xs {
+  @include make-row();
+  margin-right: ($grid-gutter-width-xs / -2);
+  margin-left:  ($grid-gutter-width-xs / -2);
+  > * {
+    @include make-col-ready();
+    padding: ($grid-gutter-width-sm / 2);
+  }
+}
+
+// Container issue
+.container {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: inherit;
+  }
+}
